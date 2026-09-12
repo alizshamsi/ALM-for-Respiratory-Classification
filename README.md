@@ -31,7 +31,7 @@ are on the Hugging Face Hub — see below.
 ## Quickstart
 
 ```bash
-git clone https://github.com/USER/REPO.git && cd REPO
+git clone https://github.com/alizshamsi/ALM-for-Respiratory-Classification/REPO.git && cd REPO
 cp configs/paths.env.example configs/paths.env   # edit the two paths
 make setup
 make check                                       # prints torch / CUDA / paths
