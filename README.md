@@ -35,7 +35,7 @@ git clone https://github.com/USER/REPO.git && cd REPO
 cp configs/paths.env.example configs/paths.env   # edit the two paths
 make setup
 make check                                       # prints torch / CUDA / paths
-make analysis                                    # CPU only, ~10 min
+make analysis                                    # CPU only, 
 ```
 
 `make analysis` recomputes every table and interval in the paper from the
@@ -44,14 +44,14 @@ committed predictions. It does not need a GPU, the dataset, or the model.
 ## Full pipeline, from a bare machine
 
 ```bash
-make data        # clone SPRSound, build manifests, audit splits      (~10 min)
-make audio       # materialise the shared 16 kHz tree, 2.5 GB         (~20 min)
-make qa          # build 17,210 / 3,568 / 2,766 / 7,990 items         (~1 min)
-make model       # download Qwen2-Audio-7B-Instruct, 17 GB            (~30 min)
-make train       # LoRA fine-tuning                                   (~7 h)
-make train-ast   # four AST baselines                                 (~5.5 h)
-make evaluate    # score both models on test2023                      (~1.5 h)
-make analysis    # all statistics                                     (~10 min)
+make data        # clone SPRSound, build manifests, audit splits      
+make audio       # materialise the shared 16 kHz tree, 2.5 GB        
+make qa          # build 17,210 / 3,568 / 2,766 / 7,990 items     
+make model       # download Qwen2-Audio-7B-Instruct, 17 GB          
+make train       # LoRA fine-tuning                                
+make train-ast   # four AST baselines                                
+make evaluate    # score both models on test2023                     
+make analysis    # all statistics                                    
 ```
 
 Reference hardware: one Quadro RTX 8000 (48 GB, Turing, no bfloat16), shared
